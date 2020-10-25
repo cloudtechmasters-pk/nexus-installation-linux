@@ -30,5 +30,35 @@
     username: admin
     Password: admin123
 
-Copy maven-release & mavem-snapshot repos. 
-Hi
+## Configuration
+1. Copy maven-release & mavem-snapshot URL's from default repos. 
+2. Maven should know the artifactory it is connecting to. Need to provide artfactory UN & password in maven <b>/opt/apache-maven-3.6.3/conf/settings.xml </b>. Under <server> tag block. Need to add both snapshot & release blocks.
+    <server>
+      <id>maven-snapshots</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+
+ <server>
+      <id>maven-releases</id>
+     <username>admin</username>
+      <password>admin123</password>
+    </server>
+3. In the maven pom.xml, <Project> tag add anywhere, <distributionManagement> tag/element -> snapshot repository & release repo. If Project version is SNAPSHOT -> snapshot repository. 
+cd /opt    
+git clone <weekend>
+Search -> maven deploy to nexus
+<distributionManagement>
+   <snapshotRepository>
+      <id>maven-snapshots</id>
+      <url>URL from above</url>
+   </snapshotRepository>
+    <repository>
+      <id>maven-releases</id>
+      <url>URL from above</url>
+   </repository>
+</distributionManagement>
+
+4. mvn deploy * wil clean install internally
+
+
