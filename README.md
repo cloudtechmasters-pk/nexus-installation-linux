@@ -12,7 +12,7 @@
 ## Add nexus user: 
     useradd nexus
 ## Change owner ship for nexus file:
-** Nexus does not recommend to run by root, as internally uses elastic search which does not recommend. 
+** Nexus does not recommend to run by root, as internally uses elastic search which does not recommend.  
     chown -R nexus:nexus nexus
 ## Open /opt/nexus/bin/nexus.rc file and update data like as below:
     run_as_user="nexus"
@@ -29,3 +29,6 @@
 ## Nexus credentials
     username: admin
     Password: admin123
+
+Copy maven-release & mavem-snapshot repos. 
+Hi
