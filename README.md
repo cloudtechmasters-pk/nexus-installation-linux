@@ -33,7 +33,7 @@
 ## Configuration
 1. Copy maven-release & mavem-snapshot URL's from default repos. 
 2. Maven should know the artifactory it is connecting to. Need to provide artfactory UN & password in maven <b>/opt/apache-maven-3.6.3/conf/settings.xml </b>. Under <server> tag block. Need to add both snapshot & release blocks.
-   <p>
+   ```
    <server>
       <id>maven-snapshots</id>
       <username>admin</username>
@@ -45,15 +45,14 @@
      <username>admin</username>
       <password>admin123</password>
     </server>
-    </p>
+    ```
     
 3. In the maven pom.xml, <Project> tag add anywhere, <distributionManagement> tag/element both snapshot repository & release repo. If Project version is SNAPSHOT -> JAR will be in snapshot repository. 
 
 cd /opt    
 git clone <weekend>
 Search -> maven deploy to nexus
-<p>
-<distributionManagement>
+```<distributionManagement>
    <snapshotRepository>
       <id>maven-snapshots</id>
       <url>URL from above</url>
@@ -63,7 +62,7 @@ Search -> maven deploy to nexus
       <url>URL from above</url>
    </repository>
 </distributionManagement>
-</p>
+```
 
 4. mvn deploy * wil clean install internally
 
