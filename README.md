@@ -53,7 +53,8 @@ cd /opt
 git clone <weekend>
 Search -> maven deploy to nexus
     
-```<distributionManagement>
+```
+<distributionManagement>
    <snapshotRepository>
       <id>maven-snapshots</id>
       <url>URL from above</url>
